@@ -1,4 +1,8 @@
 var fs = require("fs");
+var Module = require("module");
+
+//fix complains that `postcss` is not installed
+process.mainModule.paths = Module._nodeModulePaths(process.cwd());
 
 /**
  * get syntax from filename ext
